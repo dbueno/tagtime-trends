@@ -51,7 +51,7 @@ shinyUI(fluidPage(
         radioButtons("units.hist", 
                      label = "Units to display:", 
                      choices = c("Hours per week", "Hours per day"), 
-                     selected = "Hours per week")
+                     selected = "Hours per day")
       ), 
       
       conditionalPanel(
