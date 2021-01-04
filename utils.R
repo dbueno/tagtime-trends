@@ -3,7 +3,8 @@
 require("httr")
 
 parseLogfile <- function(logfile.url, regexes, perl) {
-  log <- content(GET(logfile.url))
+  log <- readChar(logfile.url, file.info(logfile.url)$size)
+  # log <- content(GET(logfile.url))
   log <- unlist(strsplit(log, "\n"))
   log <- strsplit(log, " ")
   timestamps <- sapply(log, function(x) as.numeric(x[1]))
